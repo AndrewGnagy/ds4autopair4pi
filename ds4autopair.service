@@ -1,0 +1,13 @@
+[Unit]
+Description=ds4autopair for pi
+After=bluetooth.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/lib/ds4autopair/ds4autopair.py
+Restart=on-failure
+RestartSec=5s
+PIDFile=/run/ds4autopair.pid
+
+[Install]
+WantedBy=multi-user.target
